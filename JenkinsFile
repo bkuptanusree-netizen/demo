@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven3
+        maven 'Maven3'
         jdk 'Java21'
      }
 
@@ -10,7 +10,7 @@ pipeline {
            stage('Checkout') {
                  steps {
                        git branch: 'main',
-                             url: 'https://github.com/bkuptanusree-netizen/demo.git
+                             url: 'https://github.com/bkuptanusree-netizen/demo.git'
                 }
            }
 
