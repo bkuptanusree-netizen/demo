@@ -19,6 +19,7 @@ pipeline {
 		steps {
 		    echo "Name: ${params.NAME}"
 		    echo "Message: ${params.MESSAGE}"
+		    echo "Build triggered at ${new Date()}"
 		}
 	   }
       }
