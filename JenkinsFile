@@ -14,5 +14,12 @@ pipeline {
                      bat 'mvn clean package'
                }
           }
+
+	stage('print Params') {
+		steps {
+		    echo "Name: ${params.NAME}"
+		    echo "Message: ${params.MESSAGE}"
+		}
+	   }
       }
 }
