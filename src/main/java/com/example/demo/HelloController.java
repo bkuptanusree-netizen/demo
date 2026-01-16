@@ -21,9 +21,9 @@ public class HelloController {
 	}
 
 	@PostMapping("/trigger")
-	public Map<String, String> trigger{
+	public Map<String, String> trigger(
 		@RequestParam String name,
-		@RequestParam String message) {
+		@RequestParam String message {
 		Map<String, String> response = new HashMap<>();
 		response.put("name", name);
 		response.put("message", message);
