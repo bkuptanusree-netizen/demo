@@ -19,4 +19,15 @@ public class HelloController {
 	public String greet(@RequestBody String name) {
 		return "Hello, " + name + "from Post API!";
 	}
+
+	@PostMapping("/trigger")
+	public Map<String, String> trigger{
+		@RequestParam String name,
+		@RequestParam String message) {
+		Map<String, String> response = new HashMap<>();
+		response.put("name", name);
+		response.put("message", message);
+		response.put("status", "triggered");
+		return response;
+	}
 }

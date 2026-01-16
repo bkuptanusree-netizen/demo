@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven3
+        jdk 'Java21'
+     }
+
+    stages {
+           stage('Checkout') {
+                 steps {
+                       git branch: 'main',
+                             url: 'https://github.com/bkuptanusree-netizen/demo.git
+                }
+           }
+
+         stage('Build') {
+               steps  {
+                     bat 'mvn clean package'
+               }
+          }
+      }
+}
