@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+           stage('Checkout') {
+                 steps {
+                       git branch: 'main',
+                             url: 'https://github.com/bkuptanusree-netizen/demo.git'
+                }
+           }
+
+         stage('Build') {
+               steps  {
+                     bat 'mvn clean package'
+               }
+          }
+
+	stage('print Params') {
+		steps {
+		    echo "Name: ${params.NAME}"
+		    echo "Message: ${params.MESSAGE}"
+		    echo "Build triggered at ${new Date()}"
+		}
+	   }
+      }
+}
